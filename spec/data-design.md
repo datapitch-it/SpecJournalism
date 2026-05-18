@@ -4,10 +4,10 @@
 
 Produce `reports/NN_slug/data-design.md`: the methodological plan for the analysis.
 This is the bridge between the journalistic intent (`story-brief.md`) and the
-technical execution (`journoai.md` Phases 1–3).
+technical execution pipeline.
 
-Data Design answers: which data, from which providers, with which method, displayed how.
-It must be complete before any `opensdmx` command is run.
+Data Design answers: which data, from which sources, with which method, displayed how.
+It must be complete before any data is acquired.
 
 ---
 
@@ -19,29 +19,29 @@ Load in order:
 1. `specjournalism/constitution.md` — verify rules are active
 2. `reports/NN_slug/story-brief.md` — read angle, scope, clarifications, null hypothesis
 
-### Step 2 — Propose candidate providers and dataflows
+### Step 2 — Propose candidate sources and datasets
 
 Based on the Story Brief scope (phenomenon, geography, time period), propose:
-- 2–3 candidate SDMX providers (from the journoai.md Phase 1.1 provider list)
-- For each provider: 1–2 candidate dataflow IDs that are likely to contain the phenomenon
+- 2–3 candidate data sources likely to contain the phenomenon
+- For each source: 1–2 candidate dataset IDs or names
 
 Format the proposal as:
 
 ```
-Candidate providers and dataflows for: [brief title]
+Candidate sources and datasets for: [brief title]
 
-Provider: Eurostat (estat)
-- [DATAFLOW_ID]: [description] — likely covers [phenomenon aspect]
-- [DATAFLOW_ID]: [description] — alternative if first is unavailable
+Source: [provider name]
+- [DATASET_ID]: [description] — likely covers [phenomenon aspect]
+- [DATASET_ID]: [description] — alternative if first is unavailable
 
-Provider: OECD (oecd)
-- [DATAFLOW_ID]: [description] — covers [phenomenon aspect at different granularity]
+Source: [provider name]
+- [DATASET_ID]: [description] — covers [phenomenon aspect at different granularity]
 
-Recommended starting point: [provider + dataflow] because [reason tied to the brief scope].
-Proceed to verify with opensdmx info?
+Recommended starting point: [source + dataset] because [reason tied to the brief scope].
+Proceed to verify dataset availability?
 ```
 
-Wait for user confirmation before committing to a provider/dataflow pair.
+Wait for user confirmation before committing to a source/dataset pair.
 
 ### Step 3 — Define the analytical method
 
@@ -104,9 +104,9 @@ Derived directly from the null hypothesis and methodological floor.]
 ## Datasets
 
 ### Dataset A — [Label]
-- Provider: [provider alias]
-- Dataflow ID: [ID]
-- Dimensions to filter: [list with chosen values]
+- Source: [provider name]
+- Dataset ID: [ID or name]
+- Dimensions / filters: [list with chosen values]
 - Time range: [YYYY–YYYY]
 - Geographic scope: [list or rule]
 - Unit: [unit of measurement]
@@ -141,19 +141,19 @@ documenting the change in notes.md. Derived from null-hypothesis.md.]
 
 ---
 
-## Handoff to JournAI pipeline
+## Handoff to technical execution pipeline
 
-Once `data-design.md` is complete and approved, hand off to `journoai.md` Phase 1.
+Once `data-design.md` is complete and approved, hand off to the execution pipeline Phase 1.
 
-**Constraints passed to the JournAI pipeline:**
+**Constraints passed to the execution pipeline:**
 - Phase 0 (research question): use the `journalistic_angle` from `story-brief.md` as the source for the cleaned research question. Do not rewrite the scope.
-- Phase 1 (dataset search): start from the provider and dataflow IDs in `data-design.md`. Use `opensdmx info` and `opensdmx search` to verify them — do not assume they are correct.
-- Phase 2 (download): use the filters defined in `data-design.md`. If filters produce no data or fewer rows than expected, record the discrepancy in `notes.md` and consult the user before changing them.
+- Phase 1 (dataset search): start from the source and dataset IDs in `data-design.md`. Verify availability — do not assume they are correct.
+- Phase 2 (acquisition): use the filters defined in `data-design.md`. If filters produce no data or fewer rows than expected, record the discrepancy in `notes.md` and consult the user before changing them.
 - Phase 3 (inspection): if the data shape contradicts the visualisation plan in `data-design.md`, update `data-design.md` and add a version note before changing the plan.
 
 ---
 
-## Output check before entering JournAI Phase 1
+## Output check before entering Phase 1
 
 - [ ] `data-design.md` exists in `reports/NN_slug/`
 - [ ] Every dataset section has provider, dataflow ID, filters, time range, output file name
@@ -161,4 +161,4 @@ Once `data-design.md` is complete and approved, hand off to `journoai.md` Phase 
 - [ ] Methodological commitments are recorded and derived from `null-hypothesis.md`
 - [ ] Data quality risks are listed for every dataset
 - [ ] `story-brief.md` version referenced in `data-design.md` header matches current version
-- [ ] No `opensdmx get` command has been run yet (only `opensdmx info` and `opensdmx search` allowed in this phase)
+- [ ] No data has been acquired yet (only dataset verification/inspection allowed in this phase)

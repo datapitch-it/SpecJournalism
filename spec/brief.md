@@ -113,7 +113,7 @@ This section prevents scope creep during data-design.]
 
 - **Preserve the user's words.** The `journalistic_angle` section must use
   the user's language as much as possible. Do not translate a vernacular question
-  into analytical framing at this stage. That happens in journoai.md Phase 0.
+  into analytical framing at this stage. That happens in Phase 0 of the execution pipeline.
 
 ---
 

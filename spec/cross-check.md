@@ -2,12 +2,12 @@
 
 ## Purpose
 
-Verify cross-artifact consistency after JournAI Phase 3 (data inspection) and before
+Verify cross-artifact consistency after Phase 3 (data inspection) and before
 Phase 4 (visualisations). This is a read-only gate: it does not change any files.
 It identifies misalignments between the Story Brief, the Data Design, the downloaded data,
 and the planned visualisations — before they become published errors.
 
-Run `/sj.check` after completing `journoai.md` Phase 3 (inspection and transformations)
+Run `/sj.check` after completing Phase 3 (inspection and transformations)
 and before starting Phase 4 (chart construction).
 
 ---
@@ -74,7 +74,7 @@ derived from actual values in `output/*.csv`?
 
 **C2. Executive summary pre-check**
 Does the data, as inspected in Phase 3, contain enough material to answer the journalistic
-angle stated in `story-brief.md` with at least the patterns required by journoai.md Phase 7
+angle stated in `story-brief.md` with at least the patterns required by Phase 7
 (temporal, cross-entity comparison, surprise finding)?
 - PASS: at least two of the three pattern types are present in the data
 - FAIL: the data only supports a single-dimension description with no comparison or trend
@@ -125,7 +125,7 @@ Record in `notes.md` after the Phase 3 entries:
 
 ## Decision rules after cross-check
 
-**All checks PASS**: proceed to `journoai.md` Phase 4 (visualisations).
+**All checks PASS**: proceed to Phase 4 (visualisations).
 
 **A1 or A2 FAIL**: stop. Return to `story-brief.md`. The analysis cannot proceed without
 data that answers the stated question. Options: pause the story, or amend the brief

@@ -15,7 +15,7 @@ If the data does not answer the brief, the story is paused — not reframed.
 ## Article 2 — Falsifiability is mandatory
 
 Every Story Brief must contain an explicit Null Hypothesis section before entering
-the JournAI pipeline. A story without a stated falsifiability condition is not ready
+the technical execution pipeline. A story without a stated falsifiability condition is not ready
 to be analysed.
 
 ## Article 3 — Methodological choices are pre-registered
@@ -35,9 +35,9 @@ Never: "causes", "drives", "is responsible for", "leads to" — unless the metho
 ## Article 5 — Scope limits are about series, not providers
 
 Never write "[Provider] does not cover X". The correct formulation is always
-"this series/dataflow does not cover X". A provider may have dedicated dataflows
+"this series/dataset does not cover X". A provider may have dedicated datasets
 for what the chosen series omits. Only claim a provider does not cover a phenomenon
-after running `opensdmx search` across that provider's full catalogue.
+after searching the provider's full catalogue.
 
 ## Article 6 — Every number has a source
 
@@ -61,7 +61,7 @@ Every analysis must be fully reproducible from the repository alone:
 - `queries/*.yaml` files must exist for every `output/*.csv`
 - `notes.md` must record every command run, in order, with exact parameters
 - `metadata/` must contain codelists for every filtered or visualised dimension
-- The Eurostat API URL (or CLI command for OECD/ISTAT) must appear in the Methodology section
+- The data source URL or CLI command must appear in the Methodology section
 - Every dataset extraction must pass the double-check rule (two independent runs)
 
 ## Article 9 — The story brief survives tool switching
@@ -98,7 +98,7 @@ These rules apply to every chart in every report. Check them at Phase 4.
 These rules apply throughout the pipeline. Check them at Phase 6.
 
 - Every transformation is documented in `notes.md` and the `.transform` block
-- Edition ID for every dataset is recorded in `notes.md` and cited in `.transform`
+- Edition or version ID for every dataset is recorded in `notes.md` and cited in `.transform`
 - Double-check result (MATCH ✓ / DIVERGENCE ✗) is recorded in `notes.md` and the Methodology section
 - Generation date appears in three places: header eyebrow, Raw data callout, footer — format `DD Month YYYY`
 - `introExtra` (executive summary) is written last, after all sections and charts are verified

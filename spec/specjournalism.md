@@ -7,9 +7,10 @@ using AI as orchestrator. It applies Spec Driven Development principles to data 
 the **Story Brief** is the source of truth. Datasets, methodology, charts and narrative are
 continuously regenerated outputs.
 
-This framework wraps around the technical execution pipeline of `journoai.md`.
-Do not modify `journoai.md`. SpecJournalism adds pre-phases and quality gates
-that run before and during the JournAI pipeline.
+SpecJournalism is pipeline-agnostic. It adds pre-phases and quality gates
+that run before and during any technical execution pipeline. The execution
+pipeline (data acquisition, inspection, visualisation, publication) is
+provided by the user and can be any tool or workflow.
 
 ---
 
@@ -18,7 +19,7 @@ that run before and during the JournAI pipeline.
 > The journalistic question is fixed first. Data choices serve the question.
 > The question never bends to fit available data.
 
-If the available SDMX data cannot answer the Story Brief, the story is paused —
+If the available data cannot answer the Story Brief, the story is paused —
 not redefined to fit what is available.
 
 ---
@@ -32,7 +33,7 @@ not redefined to fit what is available.
 | `clarify.md` | Structured clarification questions | Phase SJ-2 |
 | `null-hypothesis.md` | Falsifiability articulation | Phase SJ-3 |
 | `data-design.md` | Methodological plan | Phase SJ-4 |
-| `cross-check.md` | Cross-artifact consistency check | Phase SJ-5 (after journoai Phase 3) |
+| `cross-check.md` | Cross-artifact consistency check | Phase SJ-5 (after Phase 3 — data inspection) |
 | `tasks.md` | Dependency-ordered execution checklist | Throughout |
 
 ---
@@ -47,40 +48,40 @@ SJ-1  Run brief.md         — produce story-brief.md for this analysis
 SJ-2  Run clarify.md       — surface underspecified areas, record answers in story-brief.md
 SJ-3  Run null-hypothesis.md — articulate falsifiability, record in story-brief.md
 SJ-4  Run data-design.md   — produce data-design.md for this analysis
-SJ-5  [checkpoint] — do not proceed to JournAI pipeline without SJ-4 complete
+SJ-5  [checkpoint] — do not proceed to technical execution without SJ-4 complete
 ```
 
-### Technical execution (JournAI pipeline)
+### Technical execution (user-provided pipeline)
 
 ```
 Phase 0  Research question — use cleaned version from story-brief.md, do not rewrite
 Phase 1  Dataset search    — constrained by data-design.md choices
-Phase 2  Data download     — follow journoai.md rules exactly
-Phase 3  Inspection        — follow journoai.md rules exactly
+Phase 2  Data acquisition  — follow the rules of the chosen pipeline
+Phase 3  Inspection        — follow the rules of the chosen pipeline
 [SJ-5 cross-check here]   — run cross-check.md before building the page
-Phase 4  Visualisations    — follow journoai.md rules + constitution.md visual rules
-Phase 5  HTML page         — follow journoai.md rules exactly
-Phase 6  Accountability    — follow journoai.md rules exactly
+Phase 4  Visualisations    — constitution.md visual rules apply regardless of pipeline
+Phase 5  Publication page  — follow the rules of the chosen pipeline
+Phase 6  Accountability    — follow the rules of the chosen pipeline
 Phase 7  Executive summary — narrative must answer story-brief.md, not just describe data
 ```
 
 ### Post-execution
 
 ```
-SJ-6  Pre-publication checklist — journoai.md checklist + specjournalism additions
+SJ-6  Pre-publication checklist — pipeline checklist + specjournalism additions
 ```
 
 ---
 
 ## Artefacts produced per analysis
 
-Every analysis in SpecJournalism produces these files in addition to JournAI standard outputs:
+Every analysis in SpecJournalism produces these files in addition to the standard pipeline outputs:
 
 ```
 reports/NN_slug/
 ├── story-brief.md        ← output of SJ-1 + SJ-2 + SJ-3
 ├── data-design.md        ← output of SJ-4
-├── [standard journoai outputs: index.html, output/, queries/, metadata/, notes.md]
+├── [pipeline outputs: index.html, output/, queries/, metadata/, notes.md]
 ```
 
 `story-brief.md` and `data-design.md` are version-controlled alongside the code they describe.
@@ -109,14 +110,14 @@ To run the full pre-phase sequence: `/sj.brief` → `/sj.clarify` → `/sj.nullh
 
 ## What SpecJournalism does NOT replace
 
-- The opensdmx CLI workflow (Phase 1–2 of journoai.md)
-- The double-check rule (Phase 2.3 of journoai.md)
-- The HTML page structure and initShell() config (Phase 5 of journoai.md)
-- The accountability standards and notes.md log (Phase 6 of journoai.md)
-- The pre-publication checklist (journoai.md)
+- The data acquisition workflow (Phases 1–2 of the execution pipeline)
+- The double-check / data verification rule
+- The publication page structure and configuration
+- The accountability standards and notes log
+- The pre-publication checklist of the chosen pipeline
 
-SpecJournalism adds structure before and consistency gates during the JournAI pipeline.
-It does not rewrite it.
+SpecJournalism adds structure before and consistency gates during the execution pipeline.
+It does not replace it.
 
 ---
 
@@ -127,7 +128,7 @@ The full SJ pre-phase sequence (SJ-1 through SJ-4) is designed for:
 - Large feature analyses with multiple datasets
 - Investigations where the data selection is non-obvious
 
-**Skip the pre-phases and use journoai.md directly for:**
+**Skip the pre-phases and go directly to the execution pipeline for:**
 - Single-dataset extractions with a clear, pre-defined research question
 - Updates to existing reports (new data vintage, extended period)
 - Technical experiments and dataset explorations with no publication intent

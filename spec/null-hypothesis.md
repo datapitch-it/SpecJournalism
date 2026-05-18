@@ -69,7 +69,7 @@ the chosen method must be capable of testing it.
 
 ### Step 5 — Identify the scope triggers
 
-State explicitly: if the null hypothesis cannot be rejected with the available SDMX data,
+State explicitly: if the null hypothesis cannot be rejected with the available data,
 what happens? Choose one:
 
 - **Story paused**: the analysis is suspended pending better data. Document in `notes.md`.
@@ -108,7 +108,7 @@ One sentence explaining the agreed course of action.]
 
 ## Rules
 
-- The null hypothesis must be written **before** running `opensdmx search` or any data query.
+- The null hypothesis must be written **before** running any data query.
   The pre-registration date in the template enforces this.
 
 - The null hypothesis must be specific enough to be testable. "The story is false if

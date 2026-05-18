@@ -5,9 +5,9 @@
 SpecJournalism is a Spec Driven Data Journalism framework that applies SDD (Spec Driven Development)
 principles to the production of AI-orchestrated data journalism analyses.
 
-It wraps around the JournAI technical pipeline (`journoai.md`) by adding pre-phases
-(Story Brief, Clarify, Null Hypothesis, Data Design) and cross-artifact consistency gates
-(Cross-Check) that run before and during the JournAI execution pipeline.
+It adds pre-phases (Story Brief, Clarify, Null Hypothesis, Data Design) and cross-artifact
+consistency gates (Cross-Check) that run before and during any technical execution pipeline.
+SpecJournalism is pipeline-agnostic.
 
 The journalistic question is fixed first. Data choices serve the question. The question
 never bends to fit available data.
@@ -23,7 +23,7 @@ never bends to fit available data.
 - `cross-check.md` — Phase SJ-5: cross-artifact consistency gate
 - `tasks.md` — dependency-ordered execution checklist
 
-Depends on: `journoai.md` (technical execution pipeline, Phases 1–7), `opensdmx` CLI.
+Requires: a technical execution pipeline (Phases 0–7) provided by the user.
 
 ---
 
@@ -94,10 +94,9 @@ la costruzione di report, il fact-checking automatizzato e la sintesi di inchies
 
 ### TODO 2 — Test su caso reale
 
-Eseguire un'analisi completa con il workflow SpecJournalism su uno dei report della
-wishlist in `journoai.md` (candidato: Priorità 1 — Mix energetico italiano e dipendenza dal gas).
+Eseguire un'analisi completa con il workflow SpecJournalism su un caso reale.
 Obiettivo: verificare in produzione se le pre-fasi (SJ-1 → SJ-4) producono un angolo
-narrativo più robusto rispetto al flusso diretto `journoai.md`.
+narrativo più robusto rispetto al flusso diretto senza pre-fasi.
 **Status**: da eseguire — dipende da TODO 1 (context building) e da disponibilità dati verificata.
 
 ### TODO 3 — Valutare integrazione come Claude Code skill
