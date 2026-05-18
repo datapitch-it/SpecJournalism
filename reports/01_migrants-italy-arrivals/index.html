@@ -1,269 +1,467 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Migranti in Italia: ritratto storico</title>
+<title>Migrants in Italy: a historical portrait</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Georgia,serif;background:#fafaf8;color:#222;max-width:900px;margin:0 auto;padding:1.5rem}
-.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:.5rem}
-h1{font-size:1.9rem;line-height:1.25;margin-bottom:.75rem;color:#111}
-.intro{font-size:1rem;line-height:1.65;color:#444;margin-bottom:2rem;border-left:3px solid #b02020;padding-left:1rem}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Georgia,serif;font-size:1rem}
+body{background:#fafaf8;color:#222;max-width:900px;margin:0 auto;padding:1.5rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:.5rem}
+h1{font-weight:bold;line-height:1.25;margin-bottom:.75rem;color:#111}
+.intro{line-height:1.65;color:#444;margin-bottom:2rem;border-left:3px solid #b02020;padding-left:1rem}
 section{margin-bottom:3rem}
-h2{font-size:1.1rem;text-transform:uppercase;letter-spacing:.05em;color:#333;margin-bottom:.25rem;border-bottom:1px solid #ddd;padding-bottom:.25rem}
-.subtitle{font-size:.78rem;color:#888;margin-bottom:.75rem;letter-spacing:.03em}
-.chart-wrap{width:100%}
-svg.xchart{width:100%;height:360px;display:block}
-.callout{background:#f5f0e8;border-left:4px solid #b02020;padding:.75rem 1rem;font-size:.88rem;line-height:1.65;margin-top:.75rem;color:#333}
+h2{font-weight:bold;text-transform:uppercase;letter-spacing:.05em;color:#333;margin-bottom:.25rem;border-bottom:1px solid #ddd;padding-bottom:.25rem}
+.subtitle{color:#888;margin-bottom:.75rem;letter-spacing:.03em}
+.chart-wrap{width:100%;position:relative}
+.callout{background:#f5f0e8;border-left:4px solid #b02020;padding:.75rem 1rem;line-height:1.65;margin-top:.75rem;color:#333}
 .callout strong{color:#b02020}
-.note{font-size:.78rem;color:#888;font-style:italic;margin-top:.4rem;line-height:1.5}
-.break-note{font-size:.78rem;color:#999;margin-top:.3rem;font-style:italic}
-.pm-legend{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.5rem;font-size:.75rem;color:#666}
+.note{color:#888;font-style:italic;margin-top:.4rem;line-height:1.5}
+.break-note{color:#999;margin-top:.3rem;font-style:italic}
+.pm-legend{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.5rem;color:#666}
 .pm-legend span{display:flex;align-items:center;gap:.25rem}
 .pm-dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0}
-.methodology{background:#f5f5f5;padding:1rem 1.2rem;font-size:.82rem;line-height:1.7;color:#555;margin-top:2rem;border-top:2px solid #ddd}
-.methodology h3{font-size:.9rem;text-transform:uppercase;margin-bottom:.6rem;color:#333;letter-spacing:.04em}
+.methodology{background:#f5f5f5;padding:1rem 1.2rem;line-height:1.7;color:#555;margin-top:2rem;border-top:2px solid #ddd}
+.methodology h3{font-weight:bold;text-transform:uppercase;margin-bottom:.6rem;color:#333;letter-spacing:.04em}
 .methodology p{margin-bottom:.5rem}
+.methodology a{color:#1a6fa8;text-decoration:none}
+.methodology a:hover{text-decoration:underline}
+.methodology .data-links{margin-top:.6rem;padding:.5rem .75rem;background:#eee;border-radius:3px}
+.methodology .data-links a{margin-right:.8rem}
 .exec-summary{background:#fff;border:1px solid #e0ddd7;border-left:4px solid #1a6fa8;padding:1.2rem 1.4rem;margin-bottom:2rem;border-radius:0 4px 4px 0}
-.exec-summary p{font-size:.95rem;line-height:1.7;color:#333;margin-bottom:.85rem}
+.exec-summary p{line-height:1.7;color:#333;margin-bottom:.85rem}
 .exec-summary p:last-child{margin-bottom:0}
-footer{font-size:.76rem;color:#aaa;margin-top:1.5rem;padding-top:.75rem;border-top:1px solid #eee;text-align:center}
+footer{color:#aaa;margin-top:1.5rem;padding-top:.75rem;border-top:1px solid #eee;text-align:center}
 </style>
 </head>
 <body>
 
-<div class="eyebrow">18 Maggio 2026 &nbsp;&middot;&nbsp; Fonti: Eurostat (MIGR_IMM1CTZ, MIGR_ASYCTZ, MIGR_ASYAPPCTZA, DEMO_PJAN) &middot; ISTAT (Permessi di soggiorno) &nbsp;&middot;&nbsp; SpecJournalism v1.0</div>
+<div class="eyebrow">18 May 2026 &nbsp;&middot;&nbsp; Sources: Eurostat (MIGR_IMM1CTZ, MIGR_ASYCTZ, MIGR_ASYAPPCTZA, DEMO_PJAN) &middot; ISTAT (Residence permits) &nbsp;&middot;&nbsp; SpecJournalism v1.0</div>
 
-<h1>Migranti in Italia: un ritratto storico</h1>
+<h1>Migrants in Italy: a historical portrait</h1>
 <p class="intro">
-  I flussi migratori verso l'Italia sono storicamente eccezionali nel 2024? La risposta
-  dipende da quale fenomeno si osserva — e questa distinzione è esattamente quella che
-  manca nel dibattito politico corrente.
+  Are migration flows to Italy historically exceptional in 2024? The answer depends on
+  which phenomenon you measure — and that distinction is precisely what is missing
+  from current political debate.
 </p>
 
 <div class="exec-summary">
   <p>
-    Per le <strong>immigrazioni totali</strong> — cioè tutti gli ingressi registrati di
-    persone che trasferiscono la residenza in Italia — il 2024 non segna un record.
-    Con 451.583 arrivi, l'Italia si trova al di sotto del picco storico della serie,
-    che risale al <strong>2008 con 534.712 persone</strong> (906 immigrati per 100.000
-    abitanti). Il 2024 è il valore più alto dal 2012, ma è il 15% sotto il massimo
-    storico. Il 2003 mostra un'impennata anomala (440.301 arrivi) riconducibile
-    alla sanatoria Bossi-Fini. La curva lunga racconta un Paese che ha già attraversato
-    fasi di afflusso più intenso, senza che questo abbia generato la stessa carica
-    emotiva nell'agenda pubblica.
+    For <strong>total immigrations</strong> — all registered entries of persons transferring
+    their residence to Italy — 2024 is not a record. With 451,583 arrivals, Italy is below
+    the historical peak of the series, which occurred in <strong>2008 with 534,712 persons</strong>
+    (906 immigrants per 100,000 residents). 2024 is the highest value since 2012, but is 15%
+    below the all-time high. The 2003 spike (440,301 arrivals) is attributable to the Bossi-Fini
+    regularisation amnesty. The long-run curve describes a country that has already gone through
+    more intense inflow phases, without this generating the same emotional charge in the public agenda.
   </p>
   <p>
-    Nel confronto europeo, l'Italia del 2024 si colloca al <strong>29° posto su 32 paesi</strong>
-    per tasso di immigrazione — con 766 ingressi per 100.000 abitanti contro una media
-    degli altri paesi europei che supera 1.400. Paesi come Spagna (2.650/100k), Irlanda
-    (2.386/100k), Austria (1.406/100k) e Germania (1.292/100k) registrano tassi di gran
-    lunga superiori. L'Italia non è, in termini relativi, un paese ad alta pressione
-    migratoria nell'insieme europeo.
+    In the European comparison, Italy in 2024 ranks <strong>29th out of 32 countries</strong>
+    by immigration rate — with 766 arrivals per 100,000 residents against a European average
+    exceeding 1,400. Countries such as Spain (2,650/100k), Ireland (2,386/100k), Austria
+    (1,406/100k) and Germany (1,292/100k) record far higher rates. In relative terms, Italy
+    is not a high-migration-pressure country within the European picture.
   </p>
   <p>
-    Il quadro cambia radicalmente per le <strong>domande di asilo</strong>. Questa serie,
-    disponibile dal 1985, mostra un massimo storico nel 2024 con <strong>158.605 domande</strong>.
-    La dinamica è strutturalmente diversa da quella delle immigrazioni totali: livelli
-    minimi fino al 2010 (ad eccezione del picco albanese del 1991 con 24.490 domande),
-    una prima ascesa con la crisi mediterranea del 2011–2017 (picco a 128.855 nel 2017),
-    e un nuovo record nel 2023–2024. Le domande di asilo e le immigrazioni totali
-    sono due fenomeni con dinamiche indipendenti, non una sola curva.
+    The picture changes radically for <strong>asylum applications</strong>. This series,
+    available from 1985, shows an all-time high in 2024 with <strong>158,605 applications</strong>.
+    The dynamic is structurally different from that of total immigrations: minimal levels
+    until 2010 (except the Albanian peak in 1991 with 24,490 applications), a first rise
+    with the Mediterranean crisis of 2011–2017 (peak of 128,855 in 2017), and a new record
+    in 2023–2024. Asylum applications and total immigrations are two phenomena with
+    independent dynamics — they are not a single curve.
   </p>
   <p>
-    La distinzione è editorialmente essenziale: chi invoca un'emergenza senza precedenti
-    ha ragione guardando le domande di asilo — effettivamente al massimo storico — e torto
-    guardando le immigrazioni totali, che superano i livelli attuali già nel 2007–2008.
-    Collassare i due fenomeni in un'unica narrativa non è solo impreciso: oscura le
-    cause, le popolazioni coinvolte e le leve di policy appropriate a ciascuno.
+    The distinction is editorially essential: those invoking an unprecedented emergency are
+    right when looking at asylum applications — genuinely at a historical high — and wrong
+    when looking at total immigrations, which exceeded current levels as far back as 2007–2008.
+    Collapsing the two phenomena into a single narrative is not merely imprecise: it obscures
+    the causes, the populations involved, and the appropriate policy levers for each.
   </p>
 </div>
 
 <section>
-  <h2>Immigrazioni registrate in Italia (1998–2024)</h2>
-  <p class="subtitle">NUMERO DI PERSONE REGISTRATE COME IMMIGRATE NELL'ANNO &nbsp;&middot;&nbsp; VALORI ASSOLUTI &nbsp;&middot;&nbsp; FONTE: EUROSTAT MIGR_IMM1CTZ</p>
-  <div class="chart-wrap"><img src="output/v1_immigration.png" style="width:100%;display:block" alt="Immigrazioni in Italia 1998-2024"></div>
+  <h2>Registered immigrations to Italy (1998–2024)</h2>
+  <p class="subtitle">NUMBER OF PERSONS REGISTERED AS IMMIGRANTS IN THE YEAR &nbsp;&middot;&nbsp; ABSOLUTE VALUES &nbsp;&middot;&nbsp; SOURCE: EUROSTAT MIGR_IMM1CTZ</p>
+  <div class="chart-wrap"><canvas id="v1canvas" height="360"></canvas></div>
   <div class="pm-legend">
-    <span><span class="pm-dot" style="background:#c0392b"></span>Centro-destra</span>
-    <span><span class="pm-dot" style="background:#2980b9"></span>Centro-sinistra</span>
-    <span><span class="pm-dot" style="background:#7f8c8d"></span>Governo tecnico</span>
+    <span><span class="pm-dot" style="background:#c0392b"></span>Centre-right</span>
+    <span><span class="pm-dot" style="background:#2980b9"></span>Centre-left</span>
+    <span><span class="pm-dot" style="background:#7f8c8d"></span>Technocratic government</span>
     <span><span class="pm-dot" style="background:#8e44ad"></span>M5S-Lega / M5S-PD</span>
   </div>
-  <p class="note">Le bande colorate indicano il governo in carica &mdash; annotazione contestuale, non analisi causale.</p>
+  <p class="note">Coloured bands indicate the government in office &mdash; contextual annotation only, not causal analysis.</p>
   <div class="callout">
-    <strong>Il picco storico non &egrave; il 2024.</strong> Il massimo della serie &egrave; il 2008
-    con 534.712 arrivi &mdash; il 18% in pi&ugrave; rispetto al 2024 (451.583). Il 2003 mostra
-    un'impennata riconducibile alla sanatoria Bossi-Fini. Dopo il 2008 i flussi scendono
-    progressivamente. Il 2024 &egrave; il valore pi&ugrave; alto dal 2012, ma resta sotto
-    il picco 2007&ndash;2008.
+    <strong>The historical peak is not 2024.</strong> The series maximum is 2008
+    with 534,712 arrivals &mdash; 18% more than 2024 (451,583). The 2003 spike
+    is attributable to the Bossi-Fini regularisation amnesty. After 2008 flows
+    declined progressively. 2024 is the highest value since 2012 but remains
+    below the 2007&ndash;2008 peak.
   </div>
 </section>
 
 <section>
-  <h2>Tasso di immigrazione per 100.000 abitanti: Italia vs. media europea (1998–2024)</h2>
-  <p class="subtitle">IMMIGRAZIONI PER 100.000 RESIDENTI &nbsp;&middot;&nbsp; MEDIA NON PONDERATA DEI PAESI CON DATI DISPONIBILI &nbsp;&middot;&nbsp; FONTE: EUROSTAT</p>
-  <div class="chart-wrap"><svg id="v2" class="xchart"></svg></div>
+  <h2>Immigration rate per 100,000 residents: Italy vs. European average (1998–2024)</h2>
+  <p class="subtitle">IMMIGRATIONS PER 100,000 RESIDENTS &nbsp;&middot;&nbsp; UNWEIGHTED AVERAGE OF COUNTRIES WITH AVAILABLE DATA &nbsp;&middot;&nbsp; SOURCE: EUROSTAT</p>
+  <div class="chart-wrap"><canvas id="v2canvas" height="400"></canvas></div>
+  <p class="note">Rate series: auto-scaled Y-axis (values are rates, not absolute counts). Note that the Y-axis does not start at zero.</p>
   <div class="callout">
-    <strong>L'Italia &egrave; stabilmente sotto la media europea.</strong> Nel 2024 il tasso
-    italiano &egrave; 766 immigrati per 100.000 abitanti; la media degli altri paesi europei
-    supera 1.400. L'Italia si colloca al 29&deg; posto su 32 paesi &mdash; il tasso &egrave;
-    paragonabile a quello di Bulgaria, Lettonia e Polonia. Il gap con la media europea
-    si &egrave; ampliato dopo il 2010.
+    <strong>Italy is consistently below the European average.</strong> In 2024 the Italian
+    rate is 766 immigrants per 100,000 residents; the European average exceeds 1,400.
+    Italy ranks 29th out of 32 countries &mdash; the rate is comparable to Bulgaria,
+    Latvia and Poland. The gap with the European average has widened since 2010.
   </div>
 </section>
 
 <section>
-  <h2>Classifica europea per tasso di immigrazione (2024)</h2>
-  <p class="subtitle">IMMIGRAZIONI PER 100.000 ABITANTI &nbsp;&middot;&nbsp; ANNO 2024 &nbsp;&middot;&nbsp; ITALIA IN ROSSO &nbsp;&middot;&nbsp; FONTE: EUROSTAT MIGR_IMM1CTZ + DEMO_PJAN</p>
-  <div id="v3"></div>
-  <p class="note">Malta, Cipro e Lussemburgo hanno tassi molto elevati per ragioni strutturali: piccola popolazione e forte flusso intra-europeo o di transito.</p>
+  <h2>European ranking by immigration rate (2024)</h2>
+  <p class="subtitle">IMMIGRATIONS PER 100,000 RESIDENTS &nbsp;&middot;&nbsp; YEAR 2024 &nbsp;&middot;&nbsp; ITALY IN RED &nbsp;&middot;&nbsp; SOURCE: EUROSTAT MIGR_IMM1CTZ + DEMO_PJAN</p>
+  <div class="chart-wrap"><canvas id="v3canvas"></canvas></div>
+  <p class="note">Malta, Cyprus and Luxembourg show very high rates for structural reasons: small populations and high intra-European or transit flows.</p>
 </section>
 
 <section>
-  <h2>Domande di asilo presentate in Italia (1985–2025)</h2>
-  <p class="subtitle">NUMERO DI DOMANDE DI ASILO &nbsp;&middot;&nbsp; VALORI ASSOLUTI &nbsp;&middot;&nbsp; FONTE: EUROSTAT MIGR_ASYCTZ (1985&ndash;2007) + MIGR_ASYAPPCTZA (2008&ndash;2025)</p>
-  <div class="chart-wrap"><img src="output/v4_asylum.png" style="width:100%;display:block" alt="Domande di asilo in Italia 1985-2025"></div>
-  <p class="break-note">&#9888;&nbsp;Rottura di serie al 2007/2008: i due segmenti usano metodologie di raccolta diverse. I valori sono comparabili ma la discontinuit&agrave; &egrave; documentata.</p>
+  <h2>Asylum applications lodged in Italy (1985–2025)</h2>
+  <p class="subtitle">NUMBER OF ASYLUM APPLICATIONS &nbsp;&middot;&nbsp; ABSOLUTE VALUES &nbsp;&middot;&nbsp; SOURCE: EUROSTAT MIGR_ASYCTZ (1985&ndash;2007) + MIGR_ASYAPPCTZA (2008&ndash;2025)</p>
+  <div class="chart-wrap"><canvas id="v4canvas" height="360"></canvas></div>
+  <p class="break-note">&#9888;&nbsp;Series break at 2007/2008: the two segments use different collection methodologies. Values are comparable but the discontinuity is documented.</p>
   <div class="pm-legend">
-    <span><span class="pm-dot" style="background:#c0392b"></span>Centro-destra</span>
-    <span><span class="pm-dot" style="background:#2980b9"></span>Centro-sinistra</span>
-    <span><span class="pm-dot" style="background:#7f8c8d"></span>Governo tecnico</span>
+    <span><span class="pm-dot" style="background:#c0392b"></span>Centre-right</span>
+    <span><span class="pm-dot" style="background:#2980b9"></span>Centre-left</span>
+    <span><span class="pm-dot" style="background:#7f8c8d"></span>Technocratic government</span>
     <span><span class="pm-dot" style="background:#8e44ad"></span>M5S-Lega / M5S-PD</span>
   </div>
-  <p class="note">Le bande colorate indicano il governo in carica dal 1994. Il periodo 1985&ndash;1993 &egrave; fuori dalla serie PM disponibile.</p>
+  <p class="note">Coloured bands indicate the government in office from 1994. The period 1985&ndash;1993 falls outside the available PM series.</p>
   <div class="callout">
-    <strong>Le domande di asilo sono a un massimo storico nel 2024 (158.605).</strong>
-    A differenza del totale immigrazioni, questa serie non era elevata nel 2007&ndash;2008.
-    Il picco albanese del 1991 (24.490) rimase un'eccezione per vent'anni. La crescita
-    strutturale inizia con la crisi mediterranea del 2011 e raggiunge il record nel 2023&ndash;2024.
-    Le due serie &mdash; immigrazioni totali e domande di asilo &mdash; hanno dinamiche indipendenti.
+    <strong>Asylum applications are at an all-time high in 2024 (158,605).</strong>
+    Unlike total immigrations, this series was not elevated in 2007&ndash;2008.
+    The Albanian peak of 1991 (24,490) remained an exception for twenty years.
+    Structural growth began with the Mediterranean crisis of 2011 and reached
+    a record in 2023&ndash;2024. The two series &mdash; total immigrations and
+    asylum applications &mdash; have independent dynamics.
   </div>
 </section>
 
 <section>
-  <h2>Permessi di soggiorno rilasciati a cittadini non-UE in Italia (2007–2024)</h2>
-  <p class="subtitle">NUOVI PERMESSI RILASCIATI NELL'ANNO &nbsp;&middot;&nbsp; SOLO CITTADINI EXTRA-UE &nbsp;&middot;&nbsp; FONTE: ISTAT</p>
-  <div class="chart-wrap"><img src="output/v5_permits.png" style="width:100%;display:block" alt="Permessi di soggiorno non-UE 2007-2024"></div>
+  <h2>Residence permits issued to non-EU citizens in Italy (2007–2024)</h2>
+  <p class="subtitle">NEW PERMITS ISSUED IN THE YEAR &nbsp;&middot;&nbsp; NON-EU CITIZENS ONLY &nbsp;&middot;&nbsp; SOURCE: ISTAT</p>
+  <div class="chart-wrap"><canvas id="v5canvas" height="300"></canvas></div>
   <div class="callout">
-    I permessi di soggiorno misurano solo i cittadini non-UE (gli europei si muovono
-    liberamente e non compaiono in questa serie). Il picco &egrave; nel 2010 (598.567)
-    &mdash; anno di un'ampia regolarizzazione. Il 2020 segna il minimo (106.503, Covid).
-    Nel 2022 si registra un nuovo massimo (449.118), seguito da un calo nel 2023&ndash;2024.
+    Residence permits cover only non-EU citizens (Europeans move freely and do not
+    appear in this series). The peak is in 2010 (598,567) &mdash; a year of a broad
+    regularisation. 2020 marks the minimum (106,503, Covid). In 2022 a new high was
+    recorded (449,118), followed by a decline in 2023&ndash;2024.
   </div>
 </section>
 
 <div class="methodology">
-  <h3>Metodologia e fonti</h3>
-  <p><strong>V1, V2, V3 &mdash; Immigrazioni:</strong> Eurostat <em>MIGR_IMM1CTZ</em>.
-     Filtri: cittadinanza=TOTALE, sesso=TOTALE, et&agrave;=TOTALE, definizione et&agrave;=COMPLETA.
-     Aggiornamento Eurostat: 30/03/2026. Serie Italia: 1998&ndash;2024. Doppia verifica: MATCH &#10003;.</p>
-  <p><strong>V4 &mdash; Asilo:</strong> Eurostat <em>MIGR_ASYCTZ</em> (1985&ndash;2007) +
-     <em>MIGR_ASYAPPCTZA</em> (2008&ndash;2025), giuntati al 2007/2008. Rottura di serie documentata.
-     Doppia verifica: MATCH &#10003;.</p>
-  <p><strong>V5 &mdash; Permessi:</strong> ISTAT, dataflow <em>29_348_DF_DCIS_PERMSOGG1_11</em>.
-     Filtri: area=Italia, sesso=totale, et&agrave;=totale, cittadinanza=WORLD. Serie: 2007&ndash;2024.</p>
-  <p><strong>Tassi per 100.000:</strong> flusso / popolazione al 1&deg; gennaio (DEMO_PJAN) &times; 100.000.
-     Media europea = media non ponderata dei tassi dei singoli paesi con dati disponibili.</p>
-  <p>Prodotto con metodo <strong>SpecJournalism</strong> (pre-fasi SJ-1&ndash;SJ-4 completate prima
-     dell'acquisizione dei dati). Query YAML in <code>queries/</code>. Dati grezzi in <code>output/</code>.</p>
+  <h3>Methodology and sources</h3>
+  <p><strong>V1, V2, V3 &mdash; Immigrations:</strong>
+     Eurostat <a href="https://ec.europa.eu/eurostat/databrowser/view/MIGR_IMM1CTZ/default/table" target="_blank" rel="noopener">MIGR_IMM1CTZ</a>.
+     Filters: citizenship=TOTAL, sex=TOTAL, age=TOTAL, age definition=COMPLETE.
+     Eurostat update: 30/03/2026. Italy series: 1998&ndash;2024. Double-check: MATCH &#10003;.</p>
+  <p><strong>V4 &mdash; Asylum:</strong>
+     Eurostat <a href="https://ec.europa.eu/eurostat/databrowser/view/MIGR_ASYCTZ/default/table" target="_blank" rel="noopener">MIGR_ASYCTZ</a> (1985&ndash;2007) +
+     <a href="https://ec.europa.eu/eurostat/databrowser/view/MIGR_ASYAPPCTZA/default/table" target="_blank" rel="noopener">MIGR_ASYAPPCTZA</a> (2008&ndash;2025),
+     joined at 2007/2008. Series break documented. Double-check: MATCH &#10003;.</p>
+  <p><strong>V5 &mdash; Permits:</strong>
+     <a href="https://esploradati.istat.it/" target="_blank" rel="noopener">ISTAT</a>, dataflow <em>29_348_DF_DCIS_PERMSOGG1_11</em>.
+     Filters: area=Italy, sex=total, age=total, citizenship=WORLD. Series: 2007&ndash;2024.</p>
+  <p><strong>Rates per 100,000:</strong> flow / population at 1 January
+     (<a href="https://ec.europa.eu/eurostat/databrowser/view/DEMO_PJAN/default/table" target="_blank" rel="noopener">DEMO_PJAN</a>) &times; 100,000.
+     European average = unweighted mean of individual country rates with available data.</p>
+  <p>Produced with the <strong>SpecJournalism</strong> methodology (pre-phases SJ-1&ndash;SJ-4 completed before data acquisition).
+     YAML queries in <code>queries/</code>. Report folder: <code>reports/01_migrants-italy-arrivals/</code>.</p>
+  <div class="data-links">
+    <strong>Raw data downloads:</strong>
+    <a href="output/A_immigration_flows.csv">A_immigration_flows.csv</a>
+    <a href="output/B1_asylum_historical.csv">B1_asylum_historical.csv</a>
+    <a href="output/B2_asylum_current.csv">B2_asylum_current.csv</a>
+    <a href="output/C_residence_permits.csv">C_residence_permits.csv</a>
+    <a href="output/D_population.csv">D_population.csv</a>
+  </div>
 </div>
 
-<footer>Dati: Eurostat, ISTAT &nbsp;&middot;&nbsp; Metodo: SpecJournalism &nbsp;&middot;&nbsp; Generato il 18 Maggio 2026</footer>
+<footer>Data: Eurostat, ISTAT &nbsp;&middot;&nbsp; Method: SpecJournalism &nbsp;&middot;&nbsp; Generated 18 May 2026</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1.13/dist/chart.xkcd.min.js"></script>
-<script src="https://unpkg.com/rough-viz@1.0.6/dist/roughviz.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script>
-const DATA = {"v1":[{"x":1998,"y":156885},{"x":1999,"y":185052},{"x":2000,"y":226968},{"x":2001,"y":208252},{"x":2002,"y":213202},{"x":2003,"y":440301},{"x":2004,"y":414880},{"x":2005,"y":304960},{"x":2006,"y":279714},{"x":2007,"y":527123},{"x":2008,"y":534712},{"x":2009,"y":442940},{"x":2010,"y":458856},{"x":2011,"y":385793},{"x":2012,"y":350772},{"x":2013,"y":307454},{"x":2014,"y":277631},{"x":2015,"y":280078},{"x":2016,"y":300823},{"x":2017,"y":343440},{"x":2018,"y":332324},{"x":2019,"y":332778},{"x":2020,"y":247526},{"x":2021,"y":318366},{"x":2022,"y":410985},{"x":2023,"y":439658},{"x":2024,"y":451583}],"v2_it":[{"x":1998,"y":275.7},{"x":1999,"y":325.2},{"x":2000,"y":398.7},{"x":2001,"y":365.6},{"x":2002,"y":374.1},{"x":2003,"y":769.9},{"x":2004,"y":720.1},{"x":2005,"y":525.4},{"x":2006,"y":479.9},{"x":2007,"y":900.9},{"x":2008,"y":906.3},{"x":2009,"y":745.4},{"x":2010,"y":768.7},{"x":2011,"y":643.5},{"x":2012,"y":583.6},{"x":2013,"y":510.1},{"x":2014,"y":460.1},{"x":2015,"y":464.5},{"x":2016,"y":500.0},{"x":2017,"y":571.8},{"x":2018,"y":554.4},{"x":2019,"y":556.3},{"x":2020,"y":415.0},{"x":2021,"y":537.5},{"x":2022,"y":696.2},{"x":2023,"y":745.2},{"x":2024,"y":765.8}],"v2_eu":[{"x":1998,"y":781.2},{"x":1999,"y":799.6},{"x":2000,"y":842.9},{"x":2001,"y":857.9},{"x":2002,"y":796.5},{"x":2003,"y":774.7},{"x":2004,"y":846.0},{"x":2005,"y":947.8},{"x":2006,"y":1026.6},{"x":2007,"y":1132.1},{"x":2008,"y":1074.0},{"x":2009,"y":905.2},{"x":2010,"y":866.8},{"x":2011,"y":931.2},{"x":2012,"y":941.5},{"x":2013,"y":1006.6},{"x":2014,"y":1090.3},{"x":2015,"y":1233.7},{"x":2016,"y":1264.7},{"x":2017,"y":1348.5},{"x":2018,"y":1446.7},{"x":2019,"y":1527.1},{"x":2020,"y":1193.2},{"x":2021,"y":1316.0},{"x":2022,"y":2282.3},{"x":2023,"y":2044.9},{"x":2024,"y":1810.3}],"v3_labels":["Slovacchia","Macedonia del Nord","Francia","Italia","Lettonia","Bulgaria","Polonia","Ungheria","Svezia","Cechia","Finlandia","Norvegia","Grecia","Germania","Estonia","Belgio","Austria","Paesi Bassi","Romania","Slovenia","Danimarca","Lituania","Croazia","Svizzera","Irlanda","Islanda","Spagna","Montenegro","Liechtenstein","Lussemburgo","Cipro","Malta"],"v3_values":[125.8,408.4,638.8,765.8,782.6,809.7,820.6,922.5,1101.2,1136.7,1141.4,1190.5,1273.6,1292.3,1355.5,1378.7,1406.4,1436.3,1502.8,1554.8,1706.4,1796.5,1822.7,2371.9,2385.5,2593.0,2650.3,3209.3,3248.8,3827.8,4188.0,6040.2],"v3_it_idx":3,"v4":[{"x":1985,"y":5400},{"x":1986,"y":6500},{"x":1987,"y":11000},{"x":1988,"y":1300},{"x":1989,"y":2240},{"x":1990,"y":3570},{"x":1991,"y":24490},{"x":1992,"y":2590},{"x":1993,"y":1320},{"x":1994,"y":1830},{"x":1995,"y":1760},{"x":1996,"y":680},{"x":1997,"y":1890},{"x":1998,"y":13100},{"x":1999,"y":18450},{"x":2000,"y":15195},{"x":2001,"y":17400},{"x":2002,"y":16015},{"x":2003,"y":13705},{"x":2004,"y":9630},{"x":2005,"y":9345},{"x":2006,"y":10350},{"x":2007,"y":14055},{"x":2008,"y":30145},{"x":2009,"y":17755},{"x":2010,"y":10050},{"x":2011,"y":40350},{"x":2012,"y":17350},{"x":2013,"y":26620},{"x":2014,"y":64625},{"x":2015,"y":83540},{"x":2016,"y":122960},{"x":2017,"y":128855},{"x":2018,"y":59950},{"x":2019,"y":43775},{"x":2020,"y":26950},{"x":2021,"y":53610},{"x":2022,"y":84290},{"x":2023,"y":135820},{"x":2024,"y":158605},{"x":2025,"y":133350}],"v5":[{"x":2007,"y":267600},{"x":2008,"y":286242},{"x":2009,"y":393031},{"x":2010,"y":598567},{"x":2011,"y":361690},{"x":2012,"y":263968},{"x":2013,"y":255646},{"x":2014,"y":248323},{"x":2015,"y":238936},{"x":2016,"y":226934},{"x":2017,"y":262770},{"x":2018,"y":242009},{"x":2019,"y":177254},{"x":2020,"y":106503},{"x":2021,"y":241595},{"x":2022,"y":449118},{"x":2023,"y":330730},{"x":2024,"y":290119}],"pm":[{"name":"Berlusconi I","short":"Berl. I","start":1994.36,"end":1995.04,"col":"#c0392b"},{"name":"Dini","short":"Dini","start":1995.04,"end":1996.38,"col":"#7f8c8d"},{"name":"Prodi I","short":"Prodi I","start":1996.38,"end":1998.8,"col":"#2980b9"},{"name":"D'Alema I+II","short":"D'Alema","start":1998.8,"end":2000.31,"col":"#2980b9"},{"name":"Amato II","short":"Amato","start":2000.31,"end":2001.44,"col":"#2980b9"},{"name":"Berlusconi II+III","short":"Berl. II-III","start":2001.44,"end":2006.37,"col":"#c0392b"},{"name":"Prodi II","short":"Prodi II","start":2006.37,"end":2008.35,"col":"#2980b9"},{"name":"Berlusconi IV","short":"Berl. IV","start":2008.35,"end":2011.87,"col":"#c0392b"},{"name":"Monti","short":"Monti","start":2011.87,"end":2013.32,"col":"#7f8c8d"},{"name":"Letta","short":"Letta","start":2013.32,"end":2014.13,"col":"#2980b9"},{"name":"Renzi","short":"Renzi","start":2014.13,"end":2016.95,"col":"#2980b9"},{"name":"Gentiloni","short":"Gent.","start":2016.95,"end":2018.41,"col":"#2980b9"},{"name":"Conte I","short":"Conte I","start":2018.41,"end":2019.68,"col":"#8e44ad"},{"name":"Conte II","short":"Conte II","start":2019.68,"end":2021.12,"col":"#2980b9"},{"name":"Draghi","short":"Draghi","start":2021.12,"end":2022.81,"col":"#7f8c8d"},{"name":"Meloni","short":"Meloni","start":2022.81,"end":2025.0,"col":"#c0392b"}]};
+const DATA = {"v1":[{"x":1998,"y":156885},{"x":1999,"y":185052},{"x":2000,"y":226968},{"x":2001,"y":208252},{"x":2002,"y":213202},{"x":2003,"y":440301},{"x":2004,"y":414880},{"x":2005,"y":304960},{"x":2006,"y":279714},{"x":2007,"y":527123},{"x":2008,"y":534712},{"x":2009,"y":442940},{"x":2010,"y":458856},{"x":2011,"y":385793},{"x":2012,"y":350772},{"x":2013,"y":307454},{"x":2014,"y":277631},{"x":2015,"y":280078},{"x":2016,"y":300823},{"x":2017,"y":343440},{"x":2018,"y":332324},{"x":2019,"y":332778},{"x":2020,"y":247526},{"x":2021,"y":318366},{"x":2022,"y":410985},{"x":2023,"y":439658},{"x":2024,"y":451583}],"v2_it":[{"x":1998,"y":275.7},{"x":1999,"y":325.2},{"x":2000,"y":398.7},{"x":2001,"y":365.6},{"x":2002,"y":374.1},{"x":2003,"y":769.9},{"x":2004,"y":720.1},{"x":2005,"y":525.4},{"x":2006,"y":479.9},{"x":2007,"y":900.9},{"x":2008,"y":906.3},{"x":2009,"y":745.4},{"x":2010,"y":768.7},{"x":2011,"y":643.5},{"x":2012,"y":583.6},{"x":2013,"y":510.1},{"x":2014,"y":460.1},{"x":2015,"y":464.5},{"x":2016,"y":500.0},{"x":2017,"y":571.8},{"x":2018,"y":554.4},{"x":2019,"y":556.3},{"x":2020,"y":415.0},{"x":2021,"y":537.5},{"x":2022,"y":696.2},{"x":2023,"y":745.2},{"x":2024,"y":765.8}],"v2_eu":[{"x":1998,"y":781.2},{"x":1999,"y":799.6},{"x":2000,"y":842.9},{"x":2001,"y":857.9},{"x":2002,"y":796.5},{"x":2003,"y":774.7},{"x":2004,"y":846.0},{"x":2005,"y":947.8},{"x":2006,"y":1026.6},{"x":2007,"y":1132.1},{"x":2008,"y":1074.0},{"x":2009,"y":905.2},{"x":2010,"y":866.8},{"x":2011,"y":931.2},{"x":2012,"y":941.5},{"x":2013,"y":1006.6},{"x":2014,"y":1090.3},{"x":2015,"y":1233.7},{"x":2016,"y":1264.7},{"x":2017,"y":1348.5},{"x":2018,"y":1446.7},{"x":2019,"y":1527.1},{"x":2020,"y":1193.2},{"x":2021,"y":1316.0},{"x":2022,"y":2282.3},{"x":2023,"y":2044.9},{"x":2024,"y":1810.3}],"v3_labels":["SLOVAKIA","NORTH MACEDONIA","FRANCE","ITALY","LATVIA","BULGARIA","POLAND","HUNGARY","SWEDEN","CZECHIA","FINLAND","NORWAY","GREECE","GERMANY","ESTONIA","BELGIUM","AUSTRIA","NETHERLANDS","ROMANIA","SLOVENIA","DENMARK","LITHUANIA","CROATIA","SWITZERLAND","IRELAND","ICELAND","SPAIN","MONTENEGRO","LIECHTENSTEIN","LUXEMBOURG","CYPRUS","MALTA"],"v3_values":[125.8,408.4,638.8,765.8,782.6,809.7,820.6,922.5,1101.2,1136.7,1141.4,1190.5,1273.6,1292.3,1355.5,1378.7,1406.4,1436.3,1502.8,1554.8,1706.4,1796.5,1822.7,2371.9,2385.5,2593.0,2650.3,3209.3,3248.8,3827.8,4188.0,6040.2],"v3_it_idx":3,"v4":[{"x":1985,"y":5400},{"x":1986,"y":6500},{"x":1987,"y":11000},{"x":1988,"y":1300},{"x":1989,"y":2240},{"x":1990,"y":3570},{"x":1991,"y":24490},{"x":1992,"y":2590},{"x":1993,"y":1320},{"x":1994,"y":1830},{"x":1995,"y":1760},{"x":1996,"y":680},{"x":1997,"y":1890},{"x":1998,"y":13100},{"x":1999,"y":18450},{"x":2000,"y":15195},{"x":2001,"y":17400},{"x":2002,"y":16015},{"x":2003,"y":13705},{"x":2004,"y":9630},{"x":2005,"y":9345},{"x":2006,"y":10350},{"x":2007,"y":14055},{"x":2008,"y":30145},{"x":2009,"y":17755},{"x":2010,"y":10050},{"x":2011,"y":40350},{"x":2012,"y":17350},{"x":2013,"y":26620},{"x":2014,"y":64625},{"x":2015,"y":83540},{"x":2016,"y":122960},{"x":2017,"y":128855},{"x":2018,"y":59950},{"x":2019,"y":43775},{"x":2020,"y":26950},{"x":2021,"y":53610},{"x":2022,"y":84290},{"x":2023,"y":135820},{"x":2024,"y":158605},{"x":2025,"y":133350}],"v5":[{"x":2007,"y":267600},{"x":2008,"y":286242},{"x":2009,"y":393031},{"x":2010,"y":598567},{"x":2011,"y":361690},{"x":2012,"y":263968},{"x":2013,"y":255646},{"x":2014,"y":248323},{"x":2015,"y":238936},{"x":2016,"y":226934},{"x":2017,"y":262770},{"x":2018,"y":242009},{"x":2019,"y":177254},{"x":2020,"y":106503},{"x":2021,"y":241595},{"x":2022,"y":449118},{"x":2023,"y":330730},{"x":2024,"y":290119}],"pm":[{"name":"Berlusconi I","short":"Berl. I","start":1994.36,"end":1995.04,"col":"#c0392b"},{"name":"Dini","short":"Dini","start":1995.04,"end":1996.38,"col":"#7f8c8d"},{"name":"Prodi I","short":"Prodi I","start":1996.38,"end":1998.8,"col":"#2980b9"},{"name":"D'Alema I+II","short":"D'Alema","start":1998.8,"end":2000.31,"col":"#2980b9"},{"name":"Amato II","short":"Amato","start":2000.31,"end":2001.44,"col":"#2980b9"},{"name":"Berlusconi II+III","short":"Berl. II-III","start":2001.44,"end":2006.37,"col":"#c0392b"},{"name":"Prodi II","short":"Prodi II","start":2006.37,"end":2008.35,"col":"#2980b9"},{"name":"Berlusconi IV","short":"Berl. IV","start":2008.35,"end":2011.87,"col":"#c0392b"},{"name":"Monti","short":"Monti","start":2011.87,"end":2013.32,"col":"#7f8c8d"},{"name":"Letta","short":"Letta","start":2013.32,"end":2014.13,"col":"#2980b9"},{"name":"Renzi","short":"Renzi","start":2014.13,"end":2016.95,"col":"#2980b9"},{"name":"Gentiloni","short":"Gent.","start":2016.95,"end":2018.41,"col":"#2980b9"},{"name":"Conte I","short":"Conte I","start":2018.41,"end":2019.68,"col":"#8e44ad"},{"name":"Conte II","short":"Conte II","start":2019.68,"end":2021.12,"col":"#2980b9"},{"name":"Draghi","short":"Draghi","start":2021.12,"end":2022.81,"col":"#7f8c8d"},{"name":"Meloni","short":"Meloni","start":2022.81,"end":2025.0,"col":"#c0392b"}]};
 
-function addPmBands(svgId, xMin, xMax) {
-  setTimeout(function() {
-    var svg = document.getElementById(svgId);
-    if (!svg) return;
-    var ticks = Array.from(svg.querySelectorAll('g.tick')).filter(function(t) {
-      var tx = t.getAttribute('transform') || '';
-      var txt = t.querySelector('text');
-      return tx && txt;
-    });
-    if (ticks.length < 2) return;
-    var td = ticks.map(function(t) {
-      var m = (t.getAttribute('transform')||'').match(/translate\(([^,)]+)/);
-      if (!m) return null;
-      var txt = t.querySelector('text').textContent.replace(/[^0-9.]/g,'');
-      return {x: parseFloat(m[1]), yr: parseFloat(txt)};
-    }).filter(function(d) { return d && !isNaN(d.yr) && d.yr > 1900 && d.yr < 2100; });
-    td.sort(function(a,b){return a.yr-b.yr;});
-    if (td.length < 2) return;
-    var mn = td[0], mx = td[td.length-1];
-    function y2x(y) { return mn.x + (y - mn.yr)/(mx.yr - mn.yr) * (mx.x - mn.x); }
-    var svgH = svg.getBoundingClientRect().height || 360;
-    var top = svgH * 0.06, bot = svgH * 0.80;
-    var ns = 'http://www.w3.org/2000/svg';
-    var g = document.createElementNS(ns,'g');
-    g.setAttribute('style','pointer-events:none');
-    DATA.pm.forEach(function(pm) {
-      var x1 = y2x(Math.max(pm.start, xMin));
-      var x2 = y2x(Math.min(pm.end, xMax));
+// Global Chart.js defaults — uppercase, Georgia
+Chart.defaults.font.family = 'Georgia, serif';
+Chart.defaults.font.size = 16;
+Chart.defaults.plugins.tooltip.titleFont = { family: 'Georgia, serif', size: 16 };
+Chart.defaults.plugins.tooltip.bodyFont  = { family: 'Georgia, serif', size: 16 };
+
+// PM bands plugin for Chart.js
+const pmBandsPlugin = {
+  id: 'pmBands',
+  beforeDraw: function(chart) {
+    var opts = chart.options.plugins.pmBands;
+    if (!opts || !opts.periods) return;
+    var ctx = chart.ctx;
+    var ca = chart.chartArea;
+    var xScale = chart.scales.x;
+    ctx.save();
+    opts.periods.forEach(function(pm) {
+      var x1 = Math.max(ca.left,  xScale.getPixelForValue(pm.start));
+      var x2 = Math.min(ca.right, xScale.getPixelForValue(pm.end));
       if (x2 <= x1 + 2) return;
-      var r = document.createElementNS(ns,'rect');
-      r.setAttribute('x', x1); r.setAttribute('y', top);
-      r.setAttribute('width', x2-x1); r.setAttribute('height', bot-top);
-      r.setAttribute('fill', pm.col); r.setAttribute('opacity','0.13');
-      g.appendChild(r);
-      if (x2-x1 > 30) {
-        var lbl = document.createElementNS(ns,'text');
-        lbl.setAttribute('x', (x1+x2)/2); lbl.setAttribute('y', top+13);
-        lbl.setAttribute('text-anchor','middle'); lbl.setAttribute('font-size','8.5');
-        lbl.setAttribute('fill', pm.col); lbl.setAttribute('opacity','0.9');
-        lbl.textContent = pm.short;
-        g.appendChild(lbl);
+      ctx.globalAlpha = 0.13;
+      ctx.fillStyle = pm.col;
+      ctx.fillRect(x1, ca.top, x2 - x1, ca.bottom - ca.top);
+      if (x2 - x1 > 28) {
+        ctx.globalAlpha = 0.85;
+        ctx.fillStyle = pm.col;
+        ctx.font = '8px Georgia, serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(pm.short.toUpperCase(), (x1 + x2) / 2, ca.top + 11);
       }
     });
-    if (svg.firstChild) svg.insertBefore(g, svg.firstChild);
-    else svg.appendChild(g);
-  }, 400);
+    ctx.restore();
+  }
+};
+
+function fmtK(v) {
+  if (v >= 1000000) return (v/1000000).toFixed(1) + 'M';
+  if (v >= 1000)    return (v/1000).toFixed(0) + 'K';
+  return v;
 }
 
-// V1: rendered as PNG (matplotlib) — y-axis starts at zero per Article 7
-
-// V2
-new chartXkcd.XY(document.getElementById('v2'), {
-  title:'', xLabel:'ANNO', yLabel:'PER 100.000 AB.',
-  data:{datasets:[
-    {label:'Italia',data:DATA.v2_it},
-    {label:'Media europea',data:DATA.v2_eu}
-  ]},
-  options:{xTickCount:7,yTickCount:6,dotSize:0.5,
-           legendPosition:chartXkcd.config.positionType.upLeft}
+// V1 — Total immigrations (line, Y from 0, PM bands)
+new Chart(document.getElementById('v1canvas'), {
+  type: 'line',
+  plugins: [pmBandsPlugin],
+  data: {
+    datasets: [{
+      label: 'Immigrations',
+      data: DATA.v1,
+      borderColor: '#b02020',
+      backgroundColor: 'rgba(176,32,32,0.07)',
+      borderWidth: 2,
+      pointRadius: 3,
+      pointHoverRadius: 6,
+      tension: 0.15,
+      fill: true
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        type: 'linear',
+        min: 1997.5, max: 2024.5,
+        ticks: { stepSize: 2, callback: function(v) { return Number.isInteger(v) ? v : ''; } },
+        title: { display: true, text: 'YEAR', font: { size: 16, family: 'Georgia, serif' } }
+      },
+      y: {
+        min: 0,
+        title: { display: true, text: 'PERSONS', font: { size: 16, family: 'Georgia, serif' } },
+        ticks: { callback: fmtK }
+      }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          title: function(items) { return 'YEAR: ' + Math.round(items[0].parsed.x); },
+          label: function(item) { return 'IMMIGRATIONS: ' + item.parsed.y.toLocaleString('en-GB'); }
+        }
+      },
+      pmBands: { periods: DATA.pm }
+    }
+  }
 });
 
-// V3
+// V2 — Rate per 100k (line, two series; auto-scaled Y acceptable for rates)
+new Chart(document.getElementById('v2canvas'), {
+  type: 'line',
+  data: {
+    datasets: [
+      {
+        label: 'ITALY',
+        data: DATA.v2_it,
+        borderColor: '#b02020',
+        backgroundColor: 'rgba(176,32,32,0.07)',
+        borderWidth: 2,
+        pointRadius: 3,
+        pointHoverRadius: 6,
+        tension: 0.15
+      },
+      {
+        label: 'EUROPEAN AVERAGE',
+        data: DATA.v2_eu,
+        borderColor: '#1a6fa8',
+        backgroundColor: 'rgba(26,111,168,0.07)',
+        borderWidth: 2,
+        pointRadius: 3,
+        pointHoverRadius: 6,
+        tension: 0.15
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        type: 'linear',
+        min: 1997.5, max: 2024.5,
+        ticks: { stepSize: 2, callback: function(v) { return Number.isInteger(v) ? v : ''; } },
+        title: { display: true, text: 'YEAR', font: { size: 16, family: 'Georgia, serif' } }
+      },
+      y: {
+        title: { display: true, text: 'PER 100,000 RES.', font: { size: 16, family: 'Georgia, serif' } },
+        ticks: { callback: fmtK }
+      }
+    },
+    plugins: {
+      legend: { display: true, labels: { font: { size: 16, family: 'Georgia, serif' } } },
+      tooltip: {
+        callbacks: {
+          title: function(items) { return 'YEAR: ' + Math.round(items[0].parsed.x); },
+          label: function(item) { return item.dataset.label + ': ' + item.parsed.y.toLocaleString('en-GB'); }
+        }
+      }
+    }
+  }
+});
+
+// V3 — EU ranking horizontal bar (rate values, Italy highlighted)
 (function() {
   var n = DATA.v3_labels.length;
-  var h = Math.max(720, n * 30 + 160);
-  var el = document.getElementById('v3');
-  el.style.height = h + 'px';
-  new roughViz.BarH({
-    element:'#v3',
-    data:{labels:DATA.v3_labels, values:DATA.v3_values},
-    title:'', color:'#1a6fa8', roughness:1.2, strokeWidth:1,
-    width: el.offsetWidth || 820,
-    height: h,
-    axisFontSize:'0.82rem', titleFontSize:'1rem',
-    margin:{top:20,bottom:70,left:145,right:60},
-    xLabel:'IMMIGRATI PER 100.000 AB.'
+  var h = Math.max(700, n * 26 + 80);
+  var wrap = document.getElementById('v3canvas').parentElement;
+  wrap.style.height = h + 'px';
+  var colors = DATA.v3_labels.map(function(_, i) {
+    return i === DATA.v3_it_idx ? '#b02020' : '#1a6fa8';
   });
-  // Highlight Italy bar after render
-  setTimeout(function() {
-    var bars = el.querySelectorAll('rect');
-    if (bars.length > DATA.v3_it_idx) {
-      bars[DATA.v3_it_idx].setAttribute('fill','#b02020');
-      bars[DATA.v3_it_idx].setAttribute('stroke','#b02020');
+  new Chart(document.getElementById('v3canvas'), {
+    type: 'bar',
+    data: {
+      labels: DATA.v3_labels,
+      datasets: [{
+        label: 'IMMIGRANTS PER 100,000 RES.',
+        data: DATA.v3_values,
+        backgroundColor: colors,
+        borderColor: colors,
+        borderWidth: 1,
+        borderRadius: 2
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          min: 0,
+          title: { display: true, text: 'IMMIGRANTS PER 100,000 RES.', font: { size: 16, family: 'Georgia, serif' } },
+          ticks: { callback: fmtK }
+        },
+        y: {
+          ticks: { font: { size: 13, family: 'Georgia, serif' } }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: function(items) { return items[0].label; },
+            label: function(item) { return 'RATE: ' + item.parsed.x.toLocaleString('en-GB'); }
+          }
+        }
+      }
     }
-  }, 600);
+  });
 })();
 
-// V4, V5: rendered as PNG (matplotlib) — y-axis starts at zero per Article 7
+// V4 — Asylum applications (line, Y from 0, PM bands)
+new Chart(document.getElementById('v4canvas'), {
+  type: 'line',
+  plugins: [pmBandsPlugin],
+  data: {
+    datasets: [{
+      label: 'Asylum applications',
+      data: DATA.v4,
+      borderColor: '#b02020',
+      backgroundColor: 'rgba(176,32,32,0.07)',
+      borderWidth: 2,
+      pointRadius: 2.5,
+      pointHoverRadius: 6,
+      tension: 0.15,
+      fill: true
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        type: 'linear',
+        min: 1984.5, max: 2025.5,
+        ticks: { stepSize: 5, callback: function(v) { return Number.isInteger(v) ? v : ''; } },
+        title: { display: true, text: 'YEAR', font: { size: 16, family: 'Georgia, serif' } }
+      },
+      y: {
+        min: 0,
+        title: { display: true, text: 'APPLICATIONS', font: { size: 16, family: 'Georgia, serif' } },
+        ticks: { callback: fmtK }
+      }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          title: function(items) { return 'YEAR: ' + Math.round(items[0].parsed.x); },
+          label: function(item) { return 'APPLICATIONS: ' + item.parsed.y.toLocaleString('en-GB'); }
+        }
+      },
+      pmBands: { periods: DATA.pm }
+    }
+  }
+});
+
+// V5 — Residence permits (bar, Y from 0, no PM bands)
+new Chart(document.getElementById('v5canvas'), {
+  type: 'bar',
+  data: {
+    labels: DATA.v5.map(function(d){ return d.x; }),
+    datasets: [{
+      label: 'Permits issued',
+      data: DATA.v5.map(function(d){ return d.y; }),
+      backgroundColor: '#1a6fa8',
+      borderColor: '#1a6fa8',
+      borderWidth: 1,
+      borderRadius: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        title: { display: true, text: 'YEAR', font: { size: 16, family: 'Georgia, serif' } }
+      },
+      y: {
+        min: 0,
+        title: { display: true, text: 'PERMITS', font: { size: 16, family: 'Georgia, serif' } },
+        ticks: { callback: fmtK }
+      }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          title: function(items) { return 'YEAR: ' + items[0].label; },
+          label: function(item) { return 'PERMITS: ' + item.parsed.y.toLocaleString('en-GB'); }
+        }
+      }
+    }
+  }
+});
 </script>
 </body>
 </html>

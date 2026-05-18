@@ -84,9 +84,10 @@ Record completion in `notes.md` with date and any anomalies found.
 - [ ] 4.1 [P] — Build chart for Dataset A section (type and library from `data-design.md`)
 - [ ] 4.2 [P] — Build chart for Dataset B section
 - [ ] 4.N [P] — [repeat for each additional dataset section]
+- [ ] 4.W — Verify no `<img>` tags are used for charts — every chart is interactive SVG or JS library output with tooltips
 - [ ] 4.X — Verify all charts render without console errors
 - [ ] 4.Y — Verify all axis labels are uppercase and units are present
-- [ ] 4.Z — Verify Y-axis baseline rule (zero for absolutes, auto-scale for rates with note)
+- [ ] 4.Z — Verify Y-axis baseline: for absolute-value charts, confirm the axis min is explicitly set to `0` in the chart configuration (not relying on library default)
 
 ---
 
@@ -97,6 +98,7 @@ Record completion in `notes.md` with date and any anomalies found.
 - [ ] 5.3 — Verify sticky nav links resolve to correct section IDs
 - [ ] 5.4 — Verify generation date appears in three places (header, raw data callout, footer)
 - [ ] 5.5 — Update `reports.json` with new entry
+- [ ] 5.6 — Verify HTML `lang` attribute is `en` (or the language declared in `story-brief.md`)
 
 ---
 
@@ -105,7 +107,8 @@ Record completion in `notes.md` with date and any anomalies found.
 - [ ] 6.1 — `notes.md` contains all phases with exact commands and dates
 - [ ] 6.2 — Every dataset section has `.transform` block (even if "no transformations applied")
 - [ ] 6.3 — Every dataset section has `.note` block with reading instructions and source
-- [ ] 6.4 — Methodology section: data source URLs verified; CLI commands or API calls recorded
+- [ ] 6.4 — Methodology section: each dataset has a clickable `<a href>` to the provider's dataset page; CLI commands or API calls recorded
+- [ ] 6.4b — Methodology section: each dataset links to its `output/*.csv` for direct download; report folder path is present
 - [ ] 6.5 — Double-check PASS blocks present in Methodology section for every dataset
 - [ ] 6.6 — Raw data section: CSV download links, rows, period, extraction date, licence
 

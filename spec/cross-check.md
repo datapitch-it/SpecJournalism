@@ -63,6 +63,13 @@ the planned chart type?
 - FAIL examples: negative values planned for roughViz.BarH; fewer than 3 time points for an XY series;
   missing entities that were expected in a ranking
 
+**B3b. Visual honesty — Y-axis and chart format**
+For each chart showing absolute values (counts, persons, expenditure):
+- Is the Y-axis minimum explicitly set to `0` in the chart configuration? (Not a library default — explicit.)
+- Is the chart rendered as interactive SVG or JS library output? (No `<img>` tags.)
+- PASS: Y min = 0 confirmed in code; no static image charts present
+- FAIL: Y axis starts above zero; or any chart uses an `<img>` tag
+
 #### Block C — Data → Narrative plan
 
 **C1. Finding cards feasibility**
@@ -107,6 +114,7 @@ Record in `notes.md` after the Phase 3 entries:
 - B1 Dataflow match: [PASS / FAIL] — [one-line explanation]
 - B2 Filter match: [PASS / FAIL] — [one-line explanation]
 - B3 Visualisation feasibility: [PASS / FAIL] — [one-line explanation]
+- B3b Visual honesty (Y-axis + no img): [PASS / FAIL] — [one-line explanation]
 
 ### Block C — Data → Narrative plan
 - C1 Finding cards feasibility: [PASS / FAIL] — [one-line explanation]
@@ -141,6 +149,8 @@ and an explanation of why the filter changed. If the change affects the null hyp
 
 **B3 FAIL**: update the visualisation plan in `data-design.md` to use a compatible chart type.
 Record the change as a version note.
+
+**B3b FAIL**: fix before proceeding to Phase 4. Replace any `<img>` chart with an interactive JS/SVG equivalent. Set the Y-axis min to `0` explicitly in the chart config. Do not proceed to chart construction with this unresolved.
 
 **C1 FAIL**: identify which finding card cannot be supported and remove or replace it.
 Do not publish a card value that is not directly traceable to `output/`.

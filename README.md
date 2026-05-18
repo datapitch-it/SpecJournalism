@@ -111,3 +111,7 @@ npx skills add -g ondata/ckan-mcp-server --skill ckan-mcp
 Spec Driven Development (SDD) was formalized as a workflow for AI coding agents by [GitHub's Spec Kit](https://github.com/github/spec-kit). The core idea: write a structured specification first — focused on the *what* and *why*, not the *how* — and treat all downstream artifacts as regenerated outputs from that spec. The constitution, clarify, and cross-check patterns in SpecJournalism are direct adaptations of Spec Kit's equivalent phases.
 
 SpecJournalism applies the same discipline to data journalism: the Story Brief is the spec, and the data pipeline, visualisations, and narrative are the implementation.
+
+---
+
+![Demo](demo.png)
