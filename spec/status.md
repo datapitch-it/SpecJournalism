@@ -29,78 +29,75 @@ Requires: a technical execution pipeline (Phases 0–7) provided by the user.
 
 ## Open Issues
 
-### TODO 1 — Deep Research: Vibe Journalism e letteratura accademica
+### TODO 1 — Deep Research: Vibe Journalism and academic literature
 
-Eseguire la seguente deep research:
-
----
-
-**Ruolo ed Obiettivo**
-
-Agisci come un ricercatore accademico senior specializzato in Media Studies, Sociologia della
-Comunicazione ed Epistemologia Digitale. Conduci una Deep Research (ricerca approfondita e
-multi-step) per mappare l'evoluzione concettuale del neologismo "Vibe Journalism", inteso come
-l'applicazione del paradigma del "Vibe Coding" all'ambito dell'informazione, e la sua
-corrispondenza all'interno della letteratura scientifica formale.
-
-**Ambito della Ricerca**
-
-In questo contesto, il "Vibe Journalism" descrive un modello di produzione giornalistica
-basato sull'intento semantico e sulla comunicazione in linguaggio naturale con agenti IA.
-Invece di seguire processi procedurali manuali o tecnici (scrittura di codice per data
-journalism, ricerca manuale tra le fonti), il giornalista agisce come un orchestratore che
-fornisce istruzioni di alto livello (il "vibe") all'IA per eseguire compiti complessi come
-la costruzione di report, il fact-checking automatizzato e la sintesi di inchieste.
-
-**Fasi di Analisi Richieste**
-
-1. Mappatura del Fenomeno Popolare (Origine del Termine)
-   - Identifica il legame tra l'origine del termine "Vibe Coding" (Andrej Karpathy, inizio 2025)
-     e la sua trasposizione nel giornalismo (es. dibattiti su Substack, X, Nieman Lab).
-   - Quali sono le caratteristiche del "Vibe Journalism" secondo i critici dei media e gli
-     innovatori tecnologici? (Es. passaggio dal "writing" al "prompting", democratizzazione
-     dello sviluppo di micro-app editoriali, focus sull'iterazione conversazionale).
-
-2. Traduzione nella Letteratura Scientifica (Peer-Reviewed)
-   - Trova i concetti accademici equivalenti che descrivono questa pratica di delega agentica.
-   - Analizza in profondità il concetto di "Agentic Journalism" e l'evoluzione dell'IA vista
-     come "Journalistic Prosthesis" (Protesi Giornalistica).
-   - Esplora il legame con l'epistemologia dell'intento e come la letteratura definisce la
-     figura del giornalista-orchestratore rispetto alla figura tradizionale.
-
-3. Incrocio con l'Intelligenza Artificiale (L'evoluzione nel 2025/2026)
-   - Analizza come l'uso di strumenti come Cursor, Replit e agenti come Claude Code o OpenAI
-     Pulse stia trasformando le redazioni in "AI-native knowledge engines".
-   - In che modo il passaggio dalla produzione di "articoli" alla fornitura di "dati strutturati
-     e metadati" per sistemi agentici ridefinisce il lavoro redazionale?
-
-4. Sintesi ed Epistemologia
-   - Quali sono le implicazioni della "Epistemic Ignorance" (Ignoranza Epistemica) se il
-     giornalista non è più in grado di spiegare come l'agente IA ha prodotto o verificato
-     una notizia?
-   - Analizza il rischio di "allucinazioni di vibe" (coerenza narrativa a scapito della
-     precisione) e le sfide per l'autorità epistemica del giornalista in un ecosistema di
-     co-creazione uomo-macchina.
-
-**Formato dell'Output**
-
-- Struttura: sezioni chiare con titoli accademici
-- Rigore: riferimenti a teorie e paper specifici (es. Social Epistemology, Media Ecology)
-- Lingua: Italiano
-
-**Status**: da eseguire
+Run the following deep research:
 
 ---
 
-### TODO 2 — Test su caso reale
+**Role and Objective**
 
-Eseguire un'analisi completa con il workflow SpecJournalism su un caso reale.
-Obiettivo: verificare in produzione se le pre-fasi (SJ-1 → SJ-4) producono un angolo
-narrativo più robusto rispetto al flusso diretto senza pre-fasi.
-**Status**: da eseguire — dipende da TODO 1 (context building) e da disponibilità dati verificata.
+Act as a senior academic researcher specialising in Media Studies, Communication Sociology,
+and Digital Epistemology. Conduct a multi-step deep research to map the conceptual evolution
+of the neologism "Vibe Journalism" — understood as the application of the "Vibe Coding"
+paradigm to journalism — and its correspondence within formal scientific literature.
 
-### TODO 3 — Valutare integrazione come Claude Code skill
+**Research Scope**
 
-Valutare se i comandi `/sj.*` possono essere implementati come skill per Claude Code
-(analogamente all'integrazione Spec Kit → `.claude/skills/`).
-**Status**: da valutare dopo il test su caso reale (TODO 2).
+In this context, "Vibe Journalism" describes a model of journalistic production based on
+semantic intent and natural language communication with AI agents. Instead of following
+manual or technical procedural processes (writing code for data journalism, manual source
+research), the journalist acts as an orchestrator who provides high-level instructions (the
+"vibe") to the AI to perform complex tasks such as report construction, automated
+fact-checking, and investigation synthesis.
+
+**Required Analysis Phases**
+
+1. Mapping the Popular Phenomenon (Origin of the Term)
+   - Identify the link between the origin of the term "Vibe Coding" (Andrej Karpathy, early 2025)
+     and its transposition into journalism (e.g. debates on Substack, X, Nieman Lab).
+   - What are the characteristics of "Vibe Journalism" according to media critics and tech
+     innovators? (e.g. shift from "writing" to "prompting", democratisation of editorial
+     micro-app development, focus on conversational iteration).
+
+2. Translation into Scientific Literature (Peer-Reviewed)
+   - Find the academic equivalents that describe this practice of agentic delegation.
+   - Analyse in depth the concept of "Agentic Journalism" and the evolution of AI seen
+     as "Journalistic Prosthesis".
+   - Explore the link with the epistemology of intent and how the literature defines the
+     journalist-as-orchestrator relative to the traditional figure.
+
+3. Intersection with Artificial Intelligence (2025/2026 evolution)
+   - Analyse how tools like Cursor, Replit, and agents like Claude Code or OpenAI Pulse
+     are transforming newsrooms into "AI-native knowledge engines".
+   - How does the shift from producing "articles" to providing "structured data and metadata"
+     for agentic systems redefine editorial work?
+
+4. Synthesis and Epistemology
+   - What are the implications of "Epistemic Ignorance" if the journalist is no longer able
+     to explain how the AI agent produced or verified a piece of news?
+   - Analyse the risk of "vibe hallucinations" (narrative coherence at the expense of
+     precision) and the challenges to journalistic epistemic authority in a human-machine
+     co-creation ecosystem.
+
+**Output Format**
+
+- Structure: clear sections with academic headings
+- Rigour: references to specific theories and papers (e.g. Social Epistemology, Media Ecology)
+
+**Status**: to do
+
+---
+
+### TODO 2 — Test on a real case
+
+Run a complete analysis using the SpecJournalism workflow on a real case.
+Goal: verify in production whether the pre-phases (SJ-1 → SJ-4) produce a more robust
+narrative angle compared to running the execution pipeline directly without pre-phases.
+**Status**: to do — depends on TODO 1 (context building) and confirmed data availability.
+
+### TODO 3 — Evaluate integration as a Claude Code skill
+
+Evaluate whether the `/sj.*` commands can be implemented as Claude Code skills
+(analogous to the Spec Kit → `.claude/skills/` integration).
+**Status**: to evaluate after the real-case test (TODO 2).
