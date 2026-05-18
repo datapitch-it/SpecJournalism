@@ -1,0 +1,19 @@
+provider: istat
+provider_url: https://esploradati.istat.it/SDMXWS/rest
+agency_id: IT1
+dataset: 29_348_DF_DCIS_PERMSOGG1_11
+description: Sesso, età, provincia
+filters:
+  REF_AREA:
+    value: IT
+    description: Italy
+  SEX:
+    value: '9'
+    description: total
+  AGE:
+    value: TOTAL
+    description: total
+start_period: null
+end_period: null
+last_n: null
+first_n: null

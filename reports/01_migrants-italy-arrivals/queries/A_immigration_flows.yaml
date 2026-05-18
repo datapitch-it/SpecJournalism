@@ -1,0 +1,25 @@
+provider: eurostat
+provider_url: https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1
+agency_id: ESTAT
+dataset: MIGR_IMM1CTZ
+description: Immigration by age group, sex and citizenship
+filters:
+  citizen:
+    value: TOTAL
+    description: ''
+  agedef:
+    value: COMPLET
+    description: ''
+  age:
+    value: TOTAL
+    description: Total
+  unit:
+    value: NR
+    description: Number
+  sex:
+    value: T
+    description: Total
+start_period: null
+end_period: null
+last_n: null
+first_n: null

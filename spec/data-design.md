@@ -21,6 +21,13 @@ Load in order:
 
 ### Step 2 — Propose candidate sources and datasets
 
+Two skills are available to assist dataset discovery before committing to a source:
+
+- **`sdmx-explorer`** — for structured statistical data (Eurostat, ISTAT, OECD, ECB, World Bank). Use when the phenomenon is a standard statistical indicator: GDP, unemployment, population, prices, fertility, energy, trade, etc.
+- **`ckan-mcp`** — for open government data portals (~950 CKAN instances, plus data.europa.eu). Use when the source is likely a national or regional open data portal, or when the dataset type is not a standard statistical series.
+
+Invoke the appropriate skill to search and validate candidate datasets before completing this step. Do not assume dataset IDs are correct without verification.
+
 Based on the Story Brief scope (phenomenon, geography, time period), propose:
 - 2–3 candidate data sources likely to contain the phenomenon
 - For each source: 1–2 candidate dataset IDs or names

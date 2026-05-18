@@ -86,6 +86,26 @@ The brief costs five minutes. Skipping it costs a story.
 
 ---
 
+## Data access skills
+
+Two skills are available for the dataset discovery and acquisition phases (SJ-4 and pipeline Phase 1):
+
+| Skill | Trigger | Coverage |
+|-------|---------|----------|
+| `sdmx-explorer` | Statistical data by topic — GDP, unemployment, population, inflation, fertility, energy, etc. | Eurostat, ISTAT, OECD, ECB, World Bank, and other SDMX providers |
+| `ckan-mcp` | Open government data portals — "find data on X in country Y" | ~950 CKAN instances worldwide, plus data.europa.eu |
+
+Both skills are invoked automatically when the context matches. They can also be triggered explicitly via `/sdmx-explorer` and `/ckan-mcp`.
+
+Install (if not already present):
+
+```bash
+npx skills add -g ondata/opensdmx --skill sdmx-explorer
+npx skills add -g ondata/ckan-mcp-server --skill ckan-mcp
+```
+
+---
+
 ## Background
 
 Spec Driven Development (SDD) was formalized as a workflow for AI coding agents by [GitHub's Spec Kit](https://github.com/github/spec-kit). The core idea: write a structured specification first — focused on the *what* and *why*, not the *how* — and treat all downstream artifacts as regenerated outputs from that spec. The constitution, clarify, and cross-check patterns in SpecJournalism are direct adaptations of Spec Kit's equivalent phases.

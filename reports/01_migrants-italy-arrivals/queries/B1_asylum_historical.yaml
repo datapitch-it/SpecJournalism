@@ -1,0 +1,16 @@
+provider: eurostat
+provider_url: https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1
+agency_id: ESTAT
+dataset: MIGR_ASYCTZ
+description: Asylum applicants by citizenship - annual data (until 2007)
+filters:
+  citizen:
+    value: TOTAL
+    description: ''
+  unit:
+    value: PER
+    description: Person
+start_period: null
+end_period: null
+last_n: null
+first_n: null

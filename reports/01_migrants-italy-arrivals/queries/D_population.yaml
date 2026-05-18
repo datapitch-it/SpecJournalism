@@ -1,0 +1,16 @@
+provider: eurostat
+provider_url: https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1
+agency_id: ESTAT
+dataset: DEMO_PJAN
+description: Population on 1 January by age and sex
+filters:
+  age:
+    value: TOTAL
+    description: Total
+  sex:
+    value: T
+    description: Total
+start_period: null
+end_period: null
+last_n: null
+first_n: null
