@@ -13,7 +13,7 @@ SpecJournalism translates this principle from software to journalism: the Story 
 
 ## How it works
 
-SpecJournalism wraps around the `journoai.md` technical pipeline by adding pre-phases and quality gates that run before and during execution.
+SpecJournalism is **pipeline-agnostic**. It adds pre-phases and quality gates that run before and during any technical execution pipeline — SDMX tools, REST APIs, CSV downloads, database queries, or custom scripts. The execution pipeline is provided by the user; SpecJournalism does not prescribe it.
 
 ### Pre-phases
 
@@ -28,9 +28,9 @@ SpecJournalism wraps around the `journoai.md` technical pipeline by adding pre-p
 
 Full pre-phase sequence: `/sj.brief` → `/sj.clarify` → `/sj.nullhyp` → `/sj.design`
 
-### Technical execution
+### Technical execution (user-provided pipeline)
 
-After the pre-phases, the standard JournAI pipeline runs (Phases 0–7), with a cross-check gate (`/sj.check`) inserted before building the final page.
+After the pre-phases, the user's execution pipeline runs (Phases 0–7). A cross-check gate (`/sj.check`) is inserted after Phase 3 (data inspection) and before Phase 4 (visualisations).
 
 ### Post-execution
 
@@ -46,7 +46,7 @@ Each analysis produces:
 reports/NN_slug/
 ├── story-brief.md        ← SJ-1 + SJ-2 + SJ-3
 ├── data-design.md        ← SJ-4
-└── [standard journoai outputs: index.html, output/, queries/, metadata/, notes.md]
+└── [pipeline outputs: index.html, output/, queries/, metadata/, notes.md]
 ```
 
 `story-brief.md` and `data-design.md` are version-controlled alongside the code they describe. When the journalistic angle changes, update `story-brief.md` first, then regenerate downstream artefacts.
@@ -76,7 +76,7 @@ The full SJ sequence (SJ-1 through SJ-4) is for:
 - Large feature analyses with multiple datasets
 - Investigations where data selection is non-obvious
 
-Skip pre-phases and use `journoai.md` directly for:
+Skip pre-phases and go directly to the execution pipeline for:
 - Single-dataset extractions with a clear, pre-defined research question
 - Updates to existing reports (new data vintage, extended period)
 - Technical experiments with no publication intent
