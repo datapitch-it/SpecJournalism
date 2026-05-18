@@ -57,14 +57,15 @@ reports/NN_slug/
 
 | File | Role |
 |------|------|
-| `constitution.md` | Immutable rules — checked at every phase |
-| `brief.md` | Story Brief instructions |
-| `clarify.md` | Structured clarification questions |
-| `null-hypothesis.md` | Falsifiability articulation |
-| `data-design.md` | Methodological plan |
-| `cross-check.md` | Cross-artifact consistency check |
-| `tasks.md` | Dependency-ordered execution checklist |
-| `status.md` | Project status |
+| `spec/constitution.md` | Immutable rules — checked at every phase |
+| `spec/brief.md` | Story Brief instructions |
+| `spec/clarify.md` | Structured clarification questions |
+| `spec/null-hypothesis.md` | Falsifiability articulation |
+| `spec/data-design.md` | Methodological plan |
+| `spec/cross-check.md` | Cross-artifact consistency check |
+| `spec/tasks.md` | Dependency-ordered execution checklist |
+| `spec/status.md` | Project status |
+| `spec/specjournalism.md` | Full methodology reference |
 
 ---
 
